@@ -29,8 +29,8 @@ export default function Footer() {
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
-          <div className="space-y-4">
-            <Image src="/new_logo.png" alt="Elefante Logo" width={200} height={67} className="h-16 w-auto" />
+          <div className="space-y-4 -ml-4">
+            <Image src="/new_logo.png" alt="Elefante Logo" width={200} height={67} className="h-48 w-auto" />
             <p className="text-white/50 text-sm leading-relaxed">
               Agencia de Growth Marketing en Colombia. Estrategia, creatividad y datos para hacer crecer tu marca.
             </p>
