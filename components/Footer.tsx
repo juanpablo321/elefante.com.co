@@ -10,7 +10,7 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/elefante.agency" },
+  { label: "Instagram", href: "https://www.instagram.com/elefanteideasgrantes?igsh=NjY2MnVhaHBxY2Rz" },
 ];
 
 export default function Footer() {
