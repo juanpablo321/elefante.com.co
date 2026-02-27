@@ -37,7 +37,7 @@ export default function Navbar() {
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
         <a href="#hero" onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }} className="flex items-center gap-2 group">
-          <Image src="/new_logo.png" alt="Elefante Logo" width={120} height={40} className="h-10 md:h-12 w-auto" priority />
+          <Image src="/new_logo.png" alt="Elefante Logo" width={240} height={80} className="h-14 md:h-16 w-auto" priority />
         </a>
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
