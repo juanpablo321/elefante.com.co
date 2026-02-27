@@ -35,7 +35,7 @@ const serviceOptions = [
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "hola@elefante.com.co", color: "brand-red" },
-  { icon: Phone, label: "Telefono", value: "+57 312 7205970", color: "brand-yellow" },
+  { icon: Phone, label: "Telefono", value: "+57 300 243 2824", color: "brand-yellow" },
   { icon: MapPin, label: "Ubicacion", value: "Bogota, Colombia", color: "brand-cyan" },
 ];
 
