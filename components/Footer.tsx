@@ -1,5 +1,6 @@
 "use client";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = [
   { label: "Inicio", href: "#hero" },
@@ -29,7 +30,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="space-y-4">
-            <span className="font-display text-4xl tracking-wider text-white">ELEFANTE</span>
+            <Image src="/new_logo.png" alt="Elefante Logo" width={150} height={50} className="h-12 w-auto" />
             <p className="text-white/50 text-sm leading-relaxed">
               Agencia de Growth Marketing en Colombia. Estrategia, creatividad y datos para hacer crecer tu marca.
             </p>

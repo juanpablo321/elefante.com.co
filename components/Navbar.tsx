@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Inicio", href: "#hero" },
@@ -36,7 +37,7 @@ export default function Navbar() {
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
         <a href="#hero" onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }} className="flex items-center gap-2 group">
-          <span className="font-display text-3xl md:text-4xl tracking-wider text-white group-hover:text-brand-red transition-colors">ELEFANTE</span>
+          <Image src="/new_logo.png" alt="Elefante Logo" width={120} height={40} className="h-10 md:h-12 w-auto" priority />
         </a>
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
