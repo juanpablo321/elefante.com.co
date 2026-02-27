@@ -12,7 +12,6 @@ const footerLinks = [
 const socialLinks = [
   { label: "Instagram", href: "https://instagram.com/elefante.agency" },
   { label: "LinkedIn", href: "https://linkedin.com/company/elefante-agency" },
-  { label: "Twitter", href: "https://twitter.com/elefanteagency" },
 ];
 
 export default function Footer() {
