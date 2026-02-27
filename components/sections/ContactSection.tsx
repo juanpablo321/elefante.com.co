@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin, CheckCircle, Loader2 } from "lucide-react";
 
-const FORMSPREE_URL = "https://formspree.io/f/xpwrzqjl";
+const API_URL = "/api/send";
 
 interface FormData {
   name: string;
@@ -60,7 +60,7 @@ export default function ContactSection() {
     if (!validate()) return;
     setSubmitting(true);
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -71,7 +71,8 @@ export default function ContactSection() {
       } else {
         throw new Error("Failed");
       }
-    } catch {
+    } catch (error) {
+      console.error("Error:", error);
       alert("Error al enviar el mensaje. Intenta de nuevo.");
     } finally {
       setSubmitting(false);
