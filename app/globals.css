@@ -22,30 +22,31 @@
   --color-ring: var(--ring);
   --color-brand-red: oklch(0.628 0.258 29.234);
   --color-brand-yellow: oklch(0.879 0.169 91.605);
-  --color-brand-cyan: oklch(0.777 0.152 194.769);
-  --color-brand-dark: oklch(0.145 0 0);
-  --color-brand-dark-lighter: oklch(0.2 0 0);
+  --color-brand-cyan: oklch(0.72 0.18 185.5);
+  --color-brand-dark: oklch(0.12 0 0);
+  --color-brand-dark-lighter: oklch(0.18 0 0);
+  --color-brand-accent-green: oklch(0.65 0.15 152);
   --font-display: 'Bebas Neue', sans-serif;
   --font-sans: 'Space Grotesk', sans-serif;
 }
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.18 0 0);
-  --card-foreground: oklch(0.95 0 0);
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.96 0 0);
+  --card: oklch(0.16 0 0);
+  --card-foreground: oklch(0.96 0 0);
   --primary: oklch(0.628 0.258 29.234);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.22 0 0);
-  --secondary-foreground: oklch(0.9 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.879 0.169 91.605);
-  --accent-foreground: oklch(0.145 0 0);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.628 0.258 29.234);
+  --secondary: oklch(0.20 0 0);
+  --secondary-foreground: oklch(0.92 0 0);
+  --muted: oklch(0.28 0 0);
+  --muted-foreground: oklch(0.68 0 0);
+  --accent: oklch(0.72 0.18 185.5);
+  --accent-foreground: oklch(0.12 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.72 0.18 185.5);
 }
 
 @layer base {
@@ -70,19 +71,34 @@
   }
   .font-display { font-family: 'Bebas Neue', sans-serif; }
   .gradient-text {
+    background: linear-gradient(135deg, oklch(0.628 0.258 29.234), oklch(0.72 0.18 185.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-warm {
     background: linear-gradient(135deg, oklch(0.628 0.258 29.234), oklch(0.879 0.169 91.605));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .zigzag-divider {
-    background: linear-gradient(135deg, oklch(0.879 0.169 91.605) 25%, transparent 25%) -14px 0,
-                linear-gradient(225deg, oklch(0.879 0.169 91.605) 25%, transparent 25%) -14px 0,
-                linear-gradient(315deg, oklch(0.879 0.169 91.605) 25%, transparent 25%),
-                linear-gradient(45deg, oklch(0.879 0.169 91.605) 25%, transparent 25%);
+    background: linear-gradient(135deg, oklch(0.72 0.18 185.5) 25%, transparent 25%) -14px 0,
+                linear-gradient(225deg, oklch(0.72 0.18 185.5) 25%, transparent 25%) -14px 0,
+                linear-gradient(315deg, oklch(0.72 0.18 185.5) 25%, transparent 25%),
+                linear-gradient(45deg, oklch(0.72 0.18 185.5) 25%, transparent 25%);
     background-size: 28px 14px;
     background-position: top;
     background-repeat: repeat-x;
     height: 14px;
+  }
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  .glow-effect {
+    @apply shadow-lg shadow-brand-cyan/20;
+  }
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-white/20 to-transparent;
   }
 }
