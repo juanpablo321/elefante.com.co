@@ -1,14 +1,13 @@
 "use client";
-import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 
 const footerLinks = [
-  { label: "Inicio", href: "/" },
-  { label: "Estrategia", href: "/estrategia" },
-  { label: "Beneficios", href: "/beneficios" },
-  { label: "Proceso", href: "/proceso" },
-  { label: "Contacto", href: "/contacto" }
+  { label: "Inicio", href: "#hero" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Nosotros", href: "#nosotros" },
+  { label: "Portafolio", href: "#portafolio" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 const socialLinks = [
@@ -16,7 +15,11 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("#")) {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="relative bg-brand-dark border-t border-white/5">
@@ -44,12 +47,16 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <a
                     href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(link.href);
+                    }}
                     className="text-white/50 hover:text-white text-sm transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
