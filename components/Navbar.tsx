@@ -183,8 +183,10 @@ export default function Navbar() {
                     />
                   );
                 }
+                if (!link.href) return null;
+                const href = link.href;
                 return (
-                  <a key={link.href} href={link.href} onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                  <a key={href} href={href} onClick={(e) => { e.preventDefault(); handleNavClick(href); }}
                     className="py-3 px-4 text-lg font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                     {link.label}
                   </a>
