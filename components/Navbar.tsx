@@ -147,6 +147,7 @@ export default function Navbar() {
                 />
               );
             }
+            if (!link.href) return null;
             return (
               <a key={link.href} href={link.href} onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                 className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors relative group">
