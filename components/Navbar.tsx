@@ -80,32 +80,11 @@ function MobileMenuCategory({
 }
 
 const navLinks: NavLink[] = [
-  { label: "Inicio", href: "#hero" },
-  {
-    label: "Conoce",
-    isCategory: true,
-    submenu: [
-      { label: "Estrategias de Crecimiento", href: "/estrategia" },
-      { label: "Nuestro Proceso", href: "/proceso" },
-      { label: "Beneficios Clave", href: "/beneficios" }
-    ]
-  },
-  {
-    label: "Empresa",
-    isCategory: true,
-    submenu: [
-      { label: "Sobre Nosotros", href: "#nosotros" },
-      { label: "Portafolio", href: "#portafolio" }
-    ]
-  },
-  {
-    label: "Casos",
-    isCategory: true,
-    submenu: [
-      { label: "Casos de Éxito", href: "#casos" },
-      { label: "Testimonios", href: "#testimonios" }
-    ]
-  }
+  { label: "Inicio", href: "/" },
+  { label: "Estrategia", href: "/estrategia" },
+  { label: "Beneficios", href: "/beneficios" },
+  { label: "Proceso", href: "/proceso" },
+  { label: "Contacto", href: "/contacto" }
 ];
 
 export default function Navbar() {
@@ -132,36 +111,27 @@ export default function Navbar() {
       }`}
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#hero" onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }} className="flex items-center group">
+        <Link href="/" className="flex items-center group">
           <Image src="/new_logo.png" alt="Elefante Logo" width={240} height={80} className="h-42 md:h-48 w-auto" priority />
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            if (link.isCategory && link.submenu) {
-              return (
-                <NavDropdown
-                  key={link.label}
-                  label={link.label}
-                  submenu={link.submenu}
-                  onItemClick={handleNavClick}
-                />
-              );
-            }
             if (!link.href) return null;
             const href = link.href;
+            const isExternal = !href.startsWith("/") && !href.startsWith("#");
             return (
-              <a key={href} href={href} onClick={(e) => { e.preventDefault(); handleNavClick(href); }}
+              <Link key={href} href={href}
                 className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors relative group">
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-brand-red group-hover:w-3/4 transition-all duration-300" />
-              </a>
+              </Link>
             );
           })}
           <div className="w-px h-6 bg-white/10 mx-2" />
-          <button onClick={() => handleNavClick("#contacto")}
+          <Link href="/contacto"
             className="bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-6 py-2 transition-colors shadow-lg shadow-brand-red/20">
             Hablemos
-          </button>
+          </Link>
         </div>
         <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-white p-2" aria-label="Toggle menu">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -173,30 +143,20 @@ export default function Navbar() {
             className="md:hidden bg-brand-dark/98 backdrop-blur-md border-t border-white/5 overflow-hidden">
             <div className="container py-6 flex flex-col gap-4">
               {navLinks.map((link, index) => {
-                if (link.isCategory && link.submenu) {
-                  return (
-                    <MobileMenuCategory
-                      key={link.label}
-                      label={link.label}
-                      submenu={link.submenu}
-                      onItemClick={handleNavClick}
-                    />
-                  );
-                }
                 if (!link.href) return null;
                 const href = link.href;
                 return (
-                  <a key={href} href={href} onClick={(e) => { e.preventDefault(); handleNavClick(href); }}
+                  <Link key={href} href={href}
                     className="py-3 px-4 text-lg font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                     {link.label}
-                  </a>
+                  </Link>
                 );
               })}
               <div className="h-px bg-white/10 my-2" />
-              <button onClick={() => handleNavClick("#contacto")}
-                className="mt-2 w-full bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full py-3 transition-colors">
+              <Link href="/contacto"
+                className="mt-2 w-full block text-center bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full py-3 transition-colors">
                 Hablemos
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}
