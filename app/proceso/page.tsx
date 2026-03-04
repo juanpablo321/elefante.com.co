@@ -30,6 +30,8 @@ export default function ProcesoPage() {
         subtitle="Nuestro Proceso"
         description="Un proceso comprobado que combina análisis, creatividad y optimización continua. Cada fase tiene objetivos claros, entregables específicos y métricas de éxito."
         backgroundImage="/images/hero-growth.jpg"
+        ctaText="Iniciar Transformación"
+        ctaHref="#contacto"
       />
 
       <section className="py-16 border-b border-white/5">

@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface PageHeroProps {
   title: string;
@@ -8,6 +9,8 @@ interface PageHeroProps {
   description?: string;
   backgroundImage?: string;
   gradient?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
 export default function PageHero({
@@ -15,7 +18,9 @@ export default function PageHero({
   subtitle,
   description,
   backgroundImage,
-  gradient = true
+  gradient = true,
+  ctaText = 'Solicitar Demo',
+  ctaHref = '#contacto'
 }: PageHeroProps) {
   return (
     <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden">
@@ -37,7 +42,7 @@ export default function PageHero({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-6"
+          className="space-y-8"
         >
           <div>
             <p className="text-brand-cyan/80 font-semibold tracking-wide uppercase mb-3">
@@ -52,6 +57,21 @@ export default function PageHero({
             <p className="text-white/70 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed text-pretty">
               {description}
             </p>
+          )}
+          
+          {ctaText && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Link
+                href={ctaHref}
+                className="inline-block bg-brand-red hover:bg-brand-red/80 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 text-lg"
+              >
+                {ctaText}
+              </Link>
+            </motion.div>
           )}
         </motion.div>
       </div>

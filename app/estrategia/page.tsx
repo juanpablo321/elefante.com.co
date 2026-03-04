@@ -30,6 +30,8 @@ export default function EstrategiaPage() {
         subtitle="Estrategias Clave"
         description="Combinamos análisis de datos, creatividad y tecnología para crear un plan de crecimiento adaptado a tu negocio. Cada estrategia está diseñada para generar resultados medibles."
         backgroundImage="/images/strategies-illustration.jpg"
+        ctaText="Solicitar Consultoría Gratis"
+        ctaHref="#contacto"
       />
 
       <section className="py-16 border-b border-white/5">

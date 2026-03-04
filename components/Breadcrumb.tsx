@@ -14,7 +14,7 @@ interface BreadcrumbProps {
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav className="py-6 border-b border-white/5">
+    <nav className="py-6 border-b border-white/5 bg-background relative z-10 mt-20 md:mt-24">
       <div className="container flex items-center gap-2 text-sm">
         <Link href="/" className="flex items-center gap-1 text-white/70 hover:text-white transition-colors">
           <Home size={16} />

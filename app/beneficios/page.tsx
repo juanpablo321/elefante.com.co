@@ -31,6 +31,8 @@ export default function BeneficiosPage() {
         subtitle="Beneficios Clave"
         description="Somos más que una agencia. Somos tu equipo de crecimiento, comprometido con resultados reales. Descubre qué nos diferencia."
         backgroundImage="/images/success-stories.jpg"
+        ctaText="Conocer Nuestro Equipo"
+        ctaHref="#contacto"
       />
 
       <section className="py-16 border-b border-white/5">
