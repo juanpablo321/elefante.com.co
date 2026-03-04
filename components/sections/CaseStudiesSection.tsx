@@ -7,11 +7,11 @@ const caseStudies = [
   {
     title: "E-commerce de Moda",
     category: "Retail Digital",
-    description: "Empresa colombiana de ropa que necesitaba escalar sus ventas online.",
+    description: "Empresa colombiana de ropa que necesitaba escalar sus ventas online con estrategias de funnel y pauta paga.",
     results: [
-      { metric: "+340%", label: "Aumento en Conversiones" },
-      { metric: "+12.5K", label: "Nuevos Clientes" },
-      { metric: "3.2x", label: "ROI Retorno" }
+      { metric: "+87%", label: "Aumento en Conversiones" },
+      { metric: "+1.8K", label: "Nuevos Clientes" },
+      { metric: "2.1x", label: "ROAS Promedio" }
     ],
     image: "/images/case-study-1.jpg",
     badgeBg: "bg-red-500/20",
@@ -21,11 +21,11 @@ const caseStudies = [
   {
     title: "SaaS B2B",
     category: "Software",
-    description: "Plataforma de software que buscaba incrementar su base de clientes.",
+    description: "Plataforma de software que buscaba incrementar su base de clientes mediante SEO y contenido especializado.",
     results: [
-      { metric: "+280%", label: "Tráfico Orgánico" },
-      { metric: "+45%", label: "Tasa de Conversión" },
-      { metric: "8.5K", label: "MRR Generado" }
+      { metric: "+95%", label: "Tráfico Orgánico" },
+      { metric: "+32%", label: "Tasa de Conversión" },
+      { metric: "+$18M COP", label: "MRR Generado" }
     ],
     image: "/images/case-study-2.jpg",
     badgeBg: "bg-cyan-500/20",
@@ -35,11 +35,11 @@ const caseStudies = [
   {
     title: "Agencia de Servicios",
     category: "Consultoría",
-    description: "Consultora que necesitaba generar leads de calidad para sus servicios.",
+    description: "Consultora que necesitaba generar leads de calidad mediante campañas de LinkedIn y Google Ads.",
     results: [
-      { metric: "+520%", label: "Leads Generados" },
-      { metric: "+180%", label: "Leads Calificados" },
-      { metric: "2.8x", label: "Cost per Lead" }
+      { metric: "+110%", label: "Leads Generados" },
+      { metric: "+68%", label: "Leads Calificados" },
+      { metric: "-34%", label: "Costo por Lead" }
     ],
     image: "/images/case-study-3.jpg",
     badgeBg: "bg-yellow-500/20",
