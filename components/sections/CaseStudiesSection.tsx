@@ -14,7 +14,9 @@ const caseStudies = [
       { metric: "3.2x", label: "ROI Retorno" }
     ],
     image: "/images/case-study-1.jpg",
-    color: "brand-red"
+    badgeBg: "bg-red-500/20",
+    badgeBorder: "border-red-500/40",
+    badgeText: "text-red-400"
   },
   {
     title: "SaaS B2B",
@@ -26,7 +28,9 @@ const caseStudies = [
       { metric: "8.5K", label: "MRR Generado" }
     ],
     image: "/images/case-study-2.jpg",
-    color: "brand-cyan"
+    badgeBg: "bg-cyan-500/20",
+    badgeBorder: "border-cyan-500/40",
+    badgeText: "text-cyan-400"
   },
   {
     title: "Agencia de Servicios",
@@ -38,7 +42,9 @@ const caseStudies = [
       { metric: "2.8x", label: "Cost per Lead" }
     ],
     image: "/images/case-study-3.jpg",
-    color: "brand-yellow"
+    badgeBg: "bg-yellow-500/20",
+    badgeBorder: "border-yellow-500/40",
+    badgeText: "text-yellow-400"
   }
 ];
 
@@ -109,8 +115,8 @@ export default function CaseStudiesSection() {
                   unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/40 to-transparent" />
-                <div className={`absolute top-4 left-4 px-3 py-1 bg-${caseStudy.color}/20 border border-${caseStudy.color}/40 rounded-full`}>
-                  <span className={`text-xs font-semibold text-${caseStudy.color} uppercase tracking-wider`}>
+                <div className={`absolute top-4 left-4 px-3 py-1 ${caseStudy.badgeBg} border ${caseStudy.badgeBorder} rounded-full`}>
+                  <span className={`text-xs font-semibold ${caseStudy.badgeText} uppercase tracking-wider`}>
                     {caseStudy.category}
                   </span>
                 </div>
