@@ -1,9 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import GrowthStrategiesSection from "@/components/sections/GrowthStrategiesSection";
-import ProcessSection from "@/components/sections/ProcessSection";
-import BenefitsSection from "@/components/sections/BenefitsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import CaseStudiesSection from "@/components/sections/CaseStudiesSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -19,9 +16,6 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <GrowthStrategiesSection />
-        <ProcessSection />
-        <BenefitsSection />
         <ServicesSection />
         <CaseStudiesSection />
         <TestimonialsSection />
