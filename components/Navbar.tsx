@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { NavDropdown } from "./NavDropdown";
 
 interface NavLink {
@@ -45,20 +46,32 @@ function MobileMenuCategory({
             exit={{ opacity: 0, height: 0 }}
             className="flex flex-col gap-1 pl-4"
           >
-            {submenu.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onItemClick(item.href);
-                  setIsOpen(false);
-                }}
-                className="py-2 px-3 text-base text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
+            {submenu.map((item) => {
+              const isExternalRoute = !item.href.startsWith('#');
+              return isExternalRoute ? (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="py-2 px-3 text-base text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onItemClick(item.href);
+                    setIsOpen(false);
+                  }}
+                  className="py-2 px-3 text-base text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </motion.div>
         )}
       </AnimatePresence>
@@ -72,9 +85,9 @@ const navLinks: NavLink[] = [
     label: "Conoce",
     isCategory: true,
     submenu: [
-      { label: "Estrategias de Crecimiento", href: "#estrategias" },
-      { label: "Nuestro Proceso", href: "#proceso" },
-      { label: "Beneficios Clave", href: "#beneficios" }
+      { label: "Estrategias de Crecimiento", href: "/estrategia" },
+      { label: "Nuestro Proceso", href: "/proceso" },
+      { label: "Beneficios Clave", href: "/beneficios" }
     ]
   },
   {

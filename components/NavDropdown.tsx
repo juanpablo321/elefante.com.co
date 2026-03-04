@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 interface SubmenuItem {
   label: string;
@@ -11,11 +12,14 @@ interface SubmenuItem {
 interface NavDropdownProps {
   label: string;
   submenu: SubmenuItem[];
-  onItemClick: (href: string) => void;
+  onItemClick?: (href: string) => void;
 }
 
 export function NavDropdown({ label, submenu, onItemClick }: NavDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const isAnchorLink = (href: string) => href.startsWith('#');
+  const isExternalRoute = (href: string) => !href.startsWith('#');
 
   return (
     <div className="relative group">
@@ -41,23 +45,33 @@ export function NavDropdown({ label, submenu, onItemClick }: NavDropdownProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full left-0 mt-2 w-56 bg-brand-dark-lighter/95 backdrop-blur-md border border-white/10 rounded-lg overflow-hidden shadow-lg shadow-black/30"
+            className="absolute top-full left-0 mt-2 w-56 bg-brand-dark-lighter/95 backdrop-blur-md border border-white/10 rounded-lg overflow-hidden shadow-lg shadow-black/30 z-50"
             onMouseLeave={() => setIsOpen(false)}
           >
             <div className="py-2">
               {submenu.map((item, index) => (
                 <div key={item.href}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onItemClick(item.href);
-                      setIsOpen(false);
-                    }}
-                    className="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors"
-                  >
-                    {item.label}
-                  </a>
+                  {isExternalRoute(item.href) ? (
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onItemClick?.(item.href);
+                        setIsOpen(false);
+                      }}
+                      className="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  )}
                   {index < submenu.length - 1 && (
                     <div className="h-px bg-white/5 mx-4" />
                   )}
