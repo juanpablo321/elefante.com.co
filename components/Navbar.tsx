@@ -80,7 +80,7 @@ function MobileMenuCategory({
 }
 
 const navLinks: NavLink[] = [
-  { label: "Inicio", href: "#hero" },
+  { label: "Inicio", href: "/" },
   {
     label: "Conoce",
     isCategory: true,
@@ -132,9 +132,9 @@ export default function Navbar() {
       }`}
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#hero" onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }} className="flex items-center group">
+        <Link href="/" className="flex items-center group">
           <Image src="/new_logo.png" alt="Elefante Logo" width={240} height={80} className="h-42 md:h-48 w-auto" priority />
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             if (link.isCategory && link.submenu) {
@@ -158,10 +158,10 @@ export default function Navbar() {
             );
           })}
           <div className="w-px h-6 bg-white/10 mx-2" />
-          <button onClick={() => handleNavClick("#contacto")}
+          <Link href="/contacto"
             className="bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-6 py-2 transition-colors shadow-lg shadow-brand-red/20">
             Hablemos
-          </button>
+          </Link>
         </div>
         <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-white p-2" aria-label="Toggle menu">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -193,10 +193,10 @@ export default function Navbar() {
                 );
               })}
               <div className="h-px bg-white/10 my-2" />
-              <button onClick={() => handleNavClick("#contacto")}
-                className="mt-2 w-full bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full py-3 transition-colors">
+              <Link href="/contacto"
+                className="mt-2 w-full block text-center bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full py-3 transition-colors">
                 Hablemos
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}
