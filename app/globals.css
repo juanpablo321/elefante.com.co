@@ -101,4 +101,13 @@
   .section-divider {
     @apply h-px bg-gradient-to-r from-transparent via-white/20 to-transparent;
   }
+  .nav-group-divider {
+    @apply w-px h-6 bg-white/10;
+  }
+  .section-spacing {
+    @apply py-24 lg:py-32;
+  }
+  .subsection-spacing {
+    @apply py-16 lg:py-20;
+  }
 }
