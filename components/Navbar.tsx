@@ -81,16 +81,17 @@ function MobileMenuCategory({
 
 const navLinks: NavLink[] = [
   { label: "Inicio", href: "/" },
+  { label: "Empieza Aquí", href: "/presencia-digital-esencial" },
   {
     label: "Servicios",
     isCategory: true,
     submenu: [
-      { label: "Growth Marketing", href: "/servicios/growth-marketing" },
-      { label: "Performance Ads", href: "/servicios/performance-ads" },
-      { label: "Social Media", href: "/servicios/social-media" },
-      { label: "SEO & SEM", href: "/servicios/seo-sem" },
-      { label: "Analytics & Data", href: "/servicios/analytics-data" },
-      { label: "AI Agents", href: "/servicios/ai-agents" }
+      { label: "Estrategia de Crecimiento", href: "/servicios/growth-marketing" },
+      { label: "Captación de Clientes", href: "/servicios/performance-ads" },
+      { label: "Gestión de Marca Personal", href: "/servicios/social-media" },
+      { label: "Visibilidad en Buscadores", href: "/servicios/seo-sem" },
+      { label: "Datos e Inteligencia", href: "/servicios/analytics-data" },
+      { label: "Automatización con IA", href: "/servicios/ai-agents" }
     ]
   },
   {
@@ -147,12 +148,21 @@ export default function Navbar() {
             }
             if (!link.href) return null;
             const href = link.href;
+            // "Empieza Aquí" gets a special highlighted style
+            if (href === "/presencia-digital-esencial") {
+              return (
+                <Link key={href} href={href}
+                  className="px-4 py-2 text-sm font-semibold text-brand-yellow hover:text-brand-yellow/80 transition-colors relative group border border-brand-yellow/30 hover:border-brand-yellow/60 rounded-full">
+                  {link.label}
+                </Link>
+              );
+            }
             return (
-              <a key={href} href={href} onClick={(e) => { e.preventDefault(); handleNavClick(href); }}
+              <Link key={href} href={href}
                 className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors relative group">
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-brand-red group-hover:w-3/4 transition-all duration-300" />
-              </a>
+              </Link>
             );
           })}
           <div className="w-px h-6 bg-white/10 mx-2" />
@@ -170,7 +180,7 @@ export default function Navbar() {
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-brand-dark/98 backdrop-blur-md border-t border-white/5 overflow-hidden">
             <div className="container py-6 flex flex-col gap-4">
-              {navLinks.map((link, index) => {
+              {navLinks.map((link) => {
                 if (link.isCategory && link.submenu) {
                   return (
                     <MobileMenuCategory
@@ -183,11 +193,20 @@ export default function Navbar() {
                 }
                 if (!link.href) return null;
                 const href = link.href;
+                // "Empieza Aquí" gets highlighted style in mobile too
+                if (href === "/presencia-digital-esencial") {
+                  return (
+                    <Link key={href} href={href} onClick={() => setMobileOpen(false)}
+                      className="py-3 px-4 text-lg font-semibold text-brand-yellow hover:text-brand-yellow/80 hover:bg-brand-yellow/5 rounded-lg transition-colors border border-brand-yellow/30 text-center">
+                      {link.label}
+                    </Link>
+                  );
+                }
                 return (
-                  <a key={href} href={href} onClick={(e) => { e.preventDefault(); handleNavClick(href); }}
+                  <Link key={href} href={href} onClick={() => setMobileOpen(false)}
                     className="py-3 px-4 text-lg font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                     {link.label}
-                  </a>
+                  </Link>
                 );
               })}
               <div className="h-px bg-white/10 my-2" />
