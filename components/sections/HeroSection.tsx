@@ -70,10 +70,10 @@ export default function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
-                onClick={() => handleNavClick("#contacto")}
+                onClick={() => handleNavClick("#demo")}
                 className="bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-8 py-3 transition-all duration-300 flex items-center justify-center gap-2 group"
               >
-                Empezar Ahora
+                Agendar Demo
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
@@ -104,8 +104,14 @@ export default function HeroSection() {
           >
             <div className="relative">
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
-                <Image src={IMAGES.hero} alt="Elefante Growth Marketing" fill className="object-cover" unoptimized priority fetchPriority="high" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent" />
+                <Image
+                  src="/images/hero-growth.png"
+                  alt="Elefante Growth Marketing"
+                  fill
+                  className="object-cover"
+                  priority
+                  fetchPriority="high"
+                />
               </div>
 
               {/* Floating metric cards */}
