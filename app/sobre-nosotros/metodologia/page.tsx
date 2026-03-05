@@ -9,9 +9,18 @@ export const metadata: Metadata = {
   title: 'Metodología | Elefante Growth Marketing',
   description: 'Descubre nuestra metodología integral de growth marketing: estrategias probadas, proceso de 4 fases, y beneficios clave que transforman tu negocio.',
   keywords: 'metodología growth marketing, estrategia de crecimiento, proceso de marketing digital, beneficios growth marketing',
+  alternates: {
+    canonical: '/sobre-nosotros/metodologia',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'Metodología | Elefante',
     description: 'Nuestro enfoque integral al crecimiento empresarial',
+    url: 'https://elefante.com.co/sobre-nosotros/metodologia',
     type: 'website',
   },
 };

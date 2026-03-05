@@ -4,14 +4,24 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Zap, Target, BarChart3, DollarSign, CheckCircle, ArrowRight } from 'lucide-react';
+import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
   title: 'Performance Ads | Elefante',
-  description: 'Campañas de publicidad de alto rendimiento en Google, Meta y TikTok. ROI garantizado y optimización continua.',
-  keywords: 'performance ads, publicidad digital, Google Ads, Meta Ads, TikTok Ads, ROI',
+  description: 'Campañas de publicidad de alto rendimiento en Google, Meta y TikTok para empresas colombianas. ROI garantizado y optimización continua.',
+  keywords: 'performance ads, publicidad digital Colombia, Google Ads, Meta Ads, TikTok Ads, ROI publicidad',
+  alternates: {
+    canonical: '/servicios/performance-ads',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'Performance Ads | Elefante',
     description: 'Campañas de publicidad que generan resultados medibles y ROI positivo',
+    url: 'https://elefante.com.co/servicios/performance-ads',
     type: 'website',
   },
 };
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
 export default function PerformanceAdsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLdService
+        name="Performance Ads"
+        description="Campañas de publicidad de alto rendimiento en Google, Meta y TikTok para empresas colombianas. ROI garantizado y optimización continua."
+        url="https://elefante.com.co/servicios/performance-ads"
+        serviceType="Digital Advertising"
+      />
       <Navbar />
       <Breadcrumb items={[{ label: 'Servicios', href: '#' }, { label: 'Performance Ads', active: true }]} />
 

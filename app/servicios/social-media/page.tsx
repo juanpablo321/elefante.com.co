@@ -4,14 +4,24 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Heart, Users, MessageSquare, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
   title: 'Social Media Marketing | Elefante',
-  description: 'Estrategias de social media que generan engagement, comunidad y ventas. Instagram, TikTok, LinkedIn y más.',
-  keywords: 'social media marketing, instagram marketing, tiktok marketing, linkedin marketing, community management',
+  description: 'Estrategias de social media que generan engagement, comunidad y ventas en Colombia. Instagram, TikTok, LinkedIn y más.',
+  keywords: 'social media marketing Colombia, instagram marketing, tiktok marketing, linkedin marketing, community management',
+  alternates: {
+    canonical: '/servicios/social-media',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'Social Media Marketing | Elefante',
     description: 'Crecimiento en redes sociales con estrategia y resultados medibles',
+    url: 'https://elefante.com.co/servicios/social-media',
     type: 'website',
   },
 };
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
 export default function SocialMediaPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLdService
+        name="Social Media Marketing"
+        description="Estrategias de social media que generan engagement, comunidad y ventas en Colombia. Instagram, TikTok, LinkedIn y más."
+        url="https://elefante.com.co/servicios/social-media"
+        serviceType="Social Media Marketing"
+      />
       <Navbar />
       <Breadcrumb items={[{ label: 'Servicios', href: '#' }, { label: 'Social Media', active: true }]} />
 

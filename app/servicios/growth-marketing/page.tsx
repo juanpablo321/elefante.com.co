@@ -4,14 +4,24 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { TrendingUp, Target, BarChart3, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
   title: 'Growth Marketing | Elefante',
-  description: 'Estrategias de growth marketing que aceleran el crecimiento de tu negocio. Resultados medibles y escalables.',
-  keywords: 'growth marketing, estrategia de crecimiento, marketing digital, aceleración empresarial',
+  description: 'Estrategias de growth marketing que aceleran el crecimiento de tu negocio en Colombia. Resultados medibles y escalables con ROI comprobado.',
+  keywords: 'growth marketing, estrategia de crecimiento, marketing digital, aceleración empresarial Colombia',
+  alternates: {
+    canonical: '/servicios/growth-marketing',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'Growth Marketing | Elefante',
     description: 'Acelera el crecimiento de tu negocio con nuestras estrategias de growth marketing',
+    url: 'https://elefante.com.co/servicios/growth-marketing',
     type: 'website',
   },
 };
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
 export default function GrowthMarketingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLdService
+        name="Growth Marketing"
+        description="Estrategias de growth marketing que aceleran el crecimiento de tu negocio en Colombia. Resultados medibles y escalables con ROI comprobado."
+        url="https://elefante.com.co/servicios/growth-marketing"
+        serviceType="Growth Marketing"
+      />
       <Navbar />
       <Breadcrumb items={[{ label: 'Servicios', href: '#' }, { label: 'Growth Marketing', active: true }]} />
 

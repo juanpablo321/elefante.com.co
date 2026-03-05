@@ -4,14 +4,24 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Search, TrendingUp, Eye, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
   title: 'SEO & SEM | Elefante',
-  description: 'Posicionamiento en buscadores (SEO) y publicidad en Google (SEM). Tráfico orgánico y pagado de calidad.',
-  keywords: 'SEO, SEM, posicionamiento en Google, Google Ads, tráfico orgánico, marketing en buscadores',
+  description: 'Posicionamiento en buscadores (SEO) y publicidad en Google (SEM) para empresas colombianas. Tráfico orgánico y pagado de calidad.',
+  keywords: 'SEO Colombia, SEM Google Ads Colombia, posicionamiento en Google, tráfico orgánico, marketing en buscadores',
+  alternates: {
+    canonical: '/servicios/seo-sem',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'SEO & SEM | Elefante',
     description: 'Domina los buscadores con nuestras estrategias de SEO y SEM',
+    url: 'https://elefante.com.co/servicios/seo-sem',
     type: 'website',
   },
 };
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
 export default function SeoSemPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLdService
+        name="SEO & SEM"
+        description="Posicionamiento en buscadores (SEO) y publicidad en Google (SEM) para empresas colombianas. Tráfico orgánico y pagado de calidad."
+        url="https://elefante.com.co/servicios/seo-sem"
+        serviceType="Search Engine Optimization"
+      />
       <Navbar />
       <Breadcrumb items={[{ label: 'Servicios', href: '#' }, { label: 'SEO & SEM', active: true }]} />
 

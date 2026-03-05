@@ -11,9 +11,18 @@ export const metadata: Metadata = {
   title: 'Contacto | Elefante Growth Marketing',
   description: 'Ponte en contacto con nuestro equipo de expertos en growth marketing. Estamos listos para ayudarte a escalar tu negocio. Consultoría gratuita.',
   keywords: 'contacto, agencia marketing, growth marketing contacto, consultoría gratis',
+  alternates: {
+    canonical: '/contacto',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'Contacto | Elefante Growth Marketing',
     description: 'Hablemos sobre cómo podemos ayudarte a crecer',
+    url: 'https://elefante.com.co/contacto',
     type: 'website',
   },
 };

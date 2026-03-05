@@ -4,14 +4,24 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Zap, Brain, Cpu, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
   title: 'AI Agents | Elefante',
-  description: 'Automatización inteligente con AI Agents. Chatbots, automatización de procesos y asistentes virtuales impulsados por IA.',
-  keywords: 'AI agents, chatbots, automatización, inteligencia artificial, asistentes virtuales, automación de marketing',
+  description: 'Automatización inteligente con AI Agents para empresas colombianas. Chatbots, automatización de procesos de marketing y asistentes virtuales con IA.',
+  keywords: 'AI agents Colombia, chatbots marketing, automatización IA, inteligencia artificial marketing, asistentes virtuales empresas',
+  alternates: {
+    canonical: '/servicios/ai-agents',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'AI Agents | Elefante',
-    description: 'Automatización inteligente con agentes de IA',
+    description: 'Automatización inteligente con agentes de IA para tu negocio',
+    url: 'https://elefante.com.co/servicios/ai-agents',
     type: 'website',
   },
 };
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
 export default function AIAgentsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLdService
+        name="AI Agents"
+        description="Automatización inteligente con AI Agents para empresas colombianas. Chatbots, automatización de procesos de marketing y asistentes virtuales con IA."
+        url="https://elefante.com.co/servicios/ai-agents"
+        serviceType="Artificial Intelligence Services"
+      />
       <Navbar />
       <Breadcrumb items={[{ label: 'Servicios', href: '#' }, { label: 'AI Agents', active: true }]} />
 

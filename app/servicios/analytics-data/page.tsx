@@ -4,14 +4,24 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { BarChart3, TrendingUp, Zap, Target, CheckCircle, ArrowRight } from 'lucide-react';
+import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
   title: 'Analytics & Data | Elefante',
-  description: 'Análisis de datos y business intelligence para tomar decisiones informadas. GA4, dashboards personalizados y reportes.',
-  keywords: 'analytics, data analysis, GA4, business intelligence, dashboards, data-driven decisions',
+  description: 'Análisis de datos y business intelligence para tomar decisiones informadas en Colombia. GA4, dashboards personalizados y reportes de marketing.',
+  keywords: 'analytics marketing Colombia, data analysis, GA4, business intelligence, dashboards marketing, data-driven',
+  alternates: {
+    canonical: '/servicios/analytics-data',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'Analytics & Data | Elefante',
     description: 'Transforma datos en decisiones de negocio',
+    url: 'https://elefante.com.co/servicios/analytics-data',
     type: 'website',
   },
 };
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
 export default function AnalyticsDataPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLdService
+        name="Analytics & Data"
+        description="Análisis de datos y business intelligence para tomar decisiones informadas en Colombia. GA4, dashboards personalizados y reportes de marketing."
+        url="https://elefante.com.co/servicios/analytics-data"
+        serviceType="Data Analytics"
+      />
       <Navbar />
       <Breadcrumb items={[{ label: 'Servicios', href: '#' }, { label: 'Analytics & Data', active: true }]} />
 
