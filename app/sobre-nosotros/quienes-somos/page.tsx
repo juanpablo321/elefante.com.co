@@ -1,5 +1,5 @@
 "use client";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import Breadcrumb from "@/components/Breadcrumb";
 import { motion } from "framer-motion";
 import { Users, Target, Zap, Award } from "lucide-react";
 import Link from "next/link";
@@ -45,10 +45,19 @@ const teamMembers = [
   }
 ];
 
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+  active?: boolean;
+}
+
 export default function QuienesSomos() {
   return (
     <main className="min-h-screen bg-brand-dark">
-      <Breadcrumb />
+      <Breadcrumb items={[
+        { label: "Sobre Nosotros", href: "/sobre-nosotros" },
+        { label: "Quiénes Somos", active: true }
+      ]} />
       
       {/* Hero Section */}
       <section className="container pt-32 pb-16">

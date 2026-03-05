@@ -1,5 +1,5 @@
 "use client";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import Breadcrumb from "@/components/Breadcrumb";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
@@ -150,10 +150,19 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+  active?: boolean;
+}
+
 export default function FAQ() {
   return (
     <main className="min-h-screen bg-brand-dark">
-      <Breadcrumb />
+      <Breadcrumb items={[
+        { label: "Sobre Nosotros", href: "/sobre-nosotros" },
+        { label: "Preguntas Frecuentes", active: true }
+      ]} />
       
       {/* Hero Section */}
       <section className="container pt-32 pb-16">
