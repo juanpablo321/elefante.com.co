@@ -117,8 +117,23 @@ export default function PresenciaDigitalEsencialPage() {
               </p>
               <div className="flex items-end justify-center gap-3 pt-4">
                 <span className="font-display text-6xl text-white">$1.800.000</span>
-                <span className="text-white/50 text-xl mb-2">COP · Pago único</span>
+                <span className="text-white/50 text-xl mb-2">COP</span>
               </div>
+
+              {/* Payment terms */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1">
+                <div className="flex items-center gap-2 bg-brand-yellow/10 border border-brand-yellow/20 rounded-full px-5 py-2">
+                  <span className="text-brand-yellow font-bold text-lg">30%</span>
+                  <span className="text-white/60 text-sm">para iniciar · <span className="text-white/80 font-medium">$540.000 COP</span></span>
+                </div>
+                <span className="text-white/30 hidden sm:block">+</span>
+                <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-5 py-2">
+                  <span className="text-white font-bold text-lg">70%</span>
+                  <span className="text-white/60 text-sm">al entregar · <span className="text-white/80 font-medium">$1.260.000 COP</span></span>
+                </div>
+              </div>
+              <p className="text-white/40 text-sm">Sin riesgo — solo pagas el resto cuando el trabajo está listo y aprobado.</p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
                 <Link
                   href="/#demo"
