@@ -10,7 +10,9 @@ const footerLinks = [
   { label: "SEO & SEM", href: "/servicios/seo-sem" },
   { label: "Analytics & Data", href: "/servicios/analytics-data" },
   { label: "AI Agents", href: "/servicios/ai-agents" },
+  { label: "Quiénes Somos", href: "/sobre-nosotros/quienes-somos" },
   { label: "Metodología", href: "/sobre-nosotros/metodologia" },
+  { label: "Preguntas Frecuentes", href: "/sobre-nosotros/faq" },
   { label: "Contacto", href: "/contacto" },
 ];
 

@@ -97,7 +97,9 @@ const navLinks: NavLink[] = [
     label: "Sobre Nosotros",
     isCategory: true,
     submenu: [
+      { label: "Quiénes Somos", href: "/sobre-nosotros/quienes-somos" },
       { label: "Metodología", href: "/sobre-nosotros/metodologia" },
+      { label: "Preguntas Frecuentes", href: "/sobre-nosotros/faq" },
       { label: "Casos de Éxito", href: "#casos" },
       { label: "Testimonios", href: "#testimonios" }
     ]
