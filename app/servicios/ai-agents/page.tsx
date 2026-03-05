@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Zap, Brain, Cpu, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
@@ -84,7 +85,14 @@ export default function AIAgentsPage() {
             </div>
             <div className="bg-gradient-to-br from-brand-red/10 to-brand-yellow/10 rounded-2xl p-8 border border-white/10 h-96 flex items-center justify-center">
               <div className="text-center">
-                <Brain className="text-brand-red mx-auto mb-4" size={48} />
+                <Image
+                  src="/images/ai-brain-neon.png"
+                  alt="Inteligencia Artificial"
+                  width={300}
+                  height={300}
+                  className="mx-auto mb-4"
+                  priority
+                />
                 <p className="text-white/70 text-lg">Inteligencia Artificial</p>
               </div>
             </div>
