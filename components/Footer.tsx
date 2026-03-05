@@ -3,11 +3,15 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 
 const footerLinks = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Portafolio", href: "#portafolio" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Growth Marketing", href: "/servicios/growth-marketing" },
+  { label: "Performance Ads", href: "/servicios/performance-ads" },
+  { label: "Social Media", href: "/servicios/social-media" },
+  { label: "SEO & SEM", href: "/servicios/seo-sem" },
+  { label: "Analytics & Data", href: "/servicios/analytics-data" },
+  { label: "AI Agents", href: "/servicios/ai-agents" },
+  { label: "Metodología", href: "/sobre-nosotros/metodologia" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const socialLinks = [
@@ -45,20 +49,32 @@ export default function Footer() {
           <div>
             <h4 className="font-display text-xl tracking-wider text-white mb-4">NAVEGACION</h4>
             <ul className="space-y-3">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.href);
-                    }}
-                    className="text-white/50 hover:text-white text-sm transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {footerLinks.map((link) => {
+                const isExternalRoute = !link.href.startsWith('#');
+                return isExternalRoute ? (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-white/50 hover:text-white text-sm transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(link.href);
+                      }}
+                      className="text-white/50 hover:text-white text-sm transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

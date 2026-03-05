@@ -82,26 +82,22 @@ function MobileMenuCategory({
 const navLinks: NavLink[] = [
   { label: "Inicio", href: "/" },
   {
-    label: "Conoce",
+    label: "Servicios",
     isCategory: true,
     submenu: [
-      { label: "Estrategias de Crecimiento", href: "/estrategia" },
-      { label: "Nuestro Proceso", href: "/proceso" },
-      { label: "Beneficios Clave", href: "/beneficios" }
+      { label: "Growth Marketing", href: "/servicios/growth-marketing" },
+      { label: "Performance Ads", href: "/servicios/performance-ads" },
+      { label: "Social Media", href: "/servicios/social-media" },
+      { label: "SEO & SEM", href: "/servicios/seo-sem" },
+      { label: "Analytics & Data", href: "/servicios/analytics-data" },
+      { label: "AI Agents", href: "/servicios/ai-agents" }
     ]
   },
   {
-    label: "Empresa",
+    label: "Sobre Nosotros",
     isCategory: true,
     submenu: [
-      { label: "Sobre Nosotros", href: "#nosotros" },
-      { label: "Portafolio", href: "#portafolio" }
-    ]
-  },
-  {
-    label: "Casos",
-    isCategory: true,
-    submenu: [
+      { label: "Metodología", href: "/sobre-nosotros/metodologia" },
       { label: "Casos de Éxito", href: "#casos" },
       { label: "Testimonios", href: "#testimonios" }
     ]
