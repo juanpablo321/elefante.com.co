@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Zap, Target, BarChart3, DollarSign, CheckCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
@@ -82,11 +83,15 @@ export default function PerformanceAdsPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-brand-yellow/10 to-brand-red/10 rounded-2xl p-8 border border-white/10 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <DollarSign className="text-brand-yellow mx-auto mb-4" size={48} />
-                <p className="text-white/70 text-lg">ROI Medible</p>
-              </div>
+            <div className="bg-gradient-to-br from-brand-yellow/10 to-brand-red/10 rounded-2xl overflow-hidden border border-white/10 h-96 flex items-center justify-center">
+              <Image
+                src="/images/performance-ads-neon.png"
+                alt="ROI Medible - Performance Ads"
+                width={600}
+                height={450}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

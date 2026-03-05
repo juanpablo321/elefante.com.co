@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Search, TrendingUp, Eye, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
@@ -54,6 +55,22 @@ export default function SeoSemPage() {
             <a href="/contacto" className="inline-block bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-red/20">
               Solicitar Auditoría Gratis
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Hero Image */}
+      <section className="py-10 border-b border-white/5 bg-gradient-to-b from-brand-dark-lighter/50 to-background">
+        <div className="container max-w-3xl">
+          <div className="bg-gradient-to-br from-brand-red/10 to-brand-yellow/10 rounded-2xl overflow-hidden border border-white/10 h-80">
+            <Image
+              src="/images/seo-sem-neon.png"
+              alt="Visibilidad y Estructura de Datos - SEO & SEM"
+              width={900}
+              height={320}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
         </div>
       </section>

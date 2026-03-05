@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { BarChart3, TrendingUp, Zap, Target, CheckCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
@@ -82,11 +83,15 @@ export default function AnalyticsDataPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-brand-red/10 to-brand-yellow/10 rounded-2xl p-8 border border-white/10 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <BarChart3 className="text-brand-red mx-auto mb-4" size={48} />
-                <p className="text-white/70 text-lg">Datos Confusos</p>
-              </div>
+            <div className="bg-gradient-to-br from-brand-red/10 to-brand-yellow/10 rounded-2xl overflow-hidden border border-white/10 h-96 flex items-center justify-center">
+              <Image
+                src="/images/analytics-data-neon.png"
+                alt="Claridad en Datos - Analytics & Data"
+                width={600}
+                height={450}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

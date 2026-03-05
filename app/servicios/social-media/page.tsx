@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import DemoRequestSection from '@/components/sections/DemoRequestSection';
 import { Heart, Users, MessageSquare, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import JsonLdService from '@/components/seo/JsonLdService';
 
 export const metadata: Metadata = {
@@ -82,11 +83,15 @@ export default function SocialMediaPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-brand-cyan/10 to-brand-red/10 rounded-2xl p-8 border border-white/10 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <Heart className="text-brand-cyan mx-auto mb-4" size={48} />
-                <p className="text-white/70 text-lg">Comunidad Comprometida</p>
-              </div>
+            <div className="bg-gradient-to-br from-brand-cyan/10 to-brand-red/10 rounded-2xl overflow-hidden border border-white/10 h-96 flex items-center justify-center">
+              <Image
+                src="/images/social-media-neon.png"
+                alt="Comunidad Comprometida - Social Media Marketing"
+                width={600}
+                height={450}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
