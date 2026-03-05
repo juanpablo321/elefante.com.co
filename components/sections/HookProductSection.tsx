@@ -8,6 +8,8 @@ const includes = [
   "Optimización de Google My Business",
   "Configuración de 2 redes sociales",
   "Formulario de contacto y captura de leads",
+  "Google Analytics 4 (GA4) configurado",
+  "Google Search Console (GSC) conectada",
   "Dominio y hosting por 1 año incluido",
   "Entrega en 7 días hábiles",
 ];

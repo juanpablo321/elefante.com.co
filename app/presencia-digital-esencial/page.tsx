@@ -43,6 +43,16 @@ const includes = [
   },
   {
     icon: Shield,
+    title: "Google Analytics 4 (GA4)",
+    desc: "Seguimiento completo de visitantes, fuentes de tráfico y comportamiento de usuarios en tu sitio.",
+  },
+  {
+    icon: Shield,
+    title: "Google Search Console (GSC)",
+    desc: "Conexión a GSC para monitorear tu presencia en búsquedas y recibir alertas de problemas.",
+  },
+  {
+    icon: Shield,
     title: "Dominio y Hosting",
     desc: "Tu dominio .com.co o .com incluido por 1 año, con hosting de alto rendimiento en Vercel.",
   },
@@ -77,7 +87,7 @@ const testimonials = [
 const faqs = [
   {
     q: "¿Qué necesito para empezar?",
-    a: "Solo necesitas tu información de contacto, logo (o te ayudamos a crearlo) y una descripción de tu servicio. Nosotros nos encargamos del resto.",
+    a: "Solo necesitas tu información de contacto, logo (o te ayudamos a crearlo) y una descripción de tu servicio. Nosotros nos encargamos del resto, incluyendo la configuración de GA4 y GSC.",
   },
   {
     q: "¿Puedo actualizar el sitio después?",
