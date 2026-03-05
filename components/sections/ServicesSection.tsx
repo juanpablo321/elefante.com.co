@@ -1,43 +1,56 @@
 "use client";
 import { motion } from "framer-motion";
-import { TrendingUp, Target, Users, Search, Palette, BarChart3 } from "lucide-react";
+import { TrendingUp, Target, Users, Search, Cpu, BarChart3 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
     icon: TrendingUp,
-    title: "Growth Marketing",
-    description: "Estrategias integrales de crecimiento que combinan creatividad, datos y tecnologia para escalar tu negocio de forma sostenible.",
+    title: "Estrategia de Crecimiento",
+    slug: "growth-marketing",
+    description: "Planes integrales para aumentar tu visibilidad, atraer clientes de alto valor y posicionarte como el referente en tu sector — con resultados medibles desde el primer mes.",
     color: "brand-red",
+    tag: "Growth Marketing",
   },
   {
     icon: Target,
-    title: "Performance Ads",
-    description: "Campanas publicitarias optimizadas en Google, Meta y TikTok con enfoque en ROI y conversion medible.",
+    title: "Captación de Clientes",
+    slug: "performance-ads",
+    description: "Atraemos prospectos calificados a tu negocio a través de campañas precisas en Google y Meta. Solo pagas por resultados reales, no por impresiones vacías.",
     color: "brand-yellow",
+    tag: "Performance Ads",
   },
   {
     icon: Users,
-    title: "Social Media",
-    description: "Gestion estrategica de redes sociales con contenido que conecta, engagement que convierte y comunidades que crecen.",
+    title: "Gestión de Marca Personal",
+    slug: "social-media",
+    description: "Construimos y gestionamos tu presencia en redes sociales para que proyectes autoridad y confianza, conectando con tu audiencia ideal de forma consistente.",
     color: "brand-cyan",
+    tag: "Social Media",
   },
   {
     icon: Search,
-    title: "SEO & SEM",
-    description: "Posicionamiento organico y pago en buscadores para que tu marca aparezca cuando tus clientes te necesitan.",
+    title: "Visibilidad en Buscadores",
+    slug: "seo-sem",
+    description: "Posicionamos tu marca en Google cuando tus clientes potenciales te buscan. SEO, GEO y AEO para que te encuentren en motores de búsqueda tradicionales y de IA.",
     color: "brand-red",
+    tag: "SEO / GEO / AEO",
   },
   {
-    icon: Palette,
-    title: "Branding Digital",
-    description: "Identidad de marca que destaca. Desde el logo hasta la experiencia digital completa que representa tu vision.",
+    icon: Cpu,
+    title: "Automatización con IA",
+    slug: "ai-agents",
+    description: "Implementamos agentes de IA y flujos de automatización que califican leads, responden consultas y gestionan tu agenda — para que tú te concentres en tu trabajo.",
     color: "brand-yellow",
+    tag: "AI Agents",
   },
   {
     icon: BarChart3,
-    title: "Analytics & Data",
-    description: "Dashboards personalizados, tracking avanzado y analisis de datos para tomar decisiones basadas en evidencia.",
+    title: "Datos e Inteligencia",
+    slug: "analytics-data",
+    description: "Dashboards personalizados y análisis de datos para que tomes decisiones basadas en evidencia, no en intuición. Claridad total sobre qué funciona y qué no.",
     color: "brand-cyan",
+    tag: "Analytics & Data",
   },
 ];
 
@@ -75,7 +88,7 @@ export default function ServicesSection() {
             LO QUE HACEMOS
           </h2>
           <p className="text-white/60 mt-4 max-w-2xl mx-auto text-lg">
-            Soluciones completas de marketing digital para impulsar el crecimiento de tu marca
+            Soluciones diseñadas para que los profesionales independientes crezcan sin complicaciones
           </p>
         </motion.div>
 
@@ -98,6 +111,10 @@ export default function ServicesSection() {
                 {/* Colored top border */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-${service.color} rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity`} />
 
+                <span className={`inline-block text-xs font-semibold tracking-widest uppercase text-${service.color}/70 mb-4`}>
+                  {service.tag}
+                </span>
+
                 <div className={`w-14 h-14 rounded-xl bg-${service.color}/10 flex items-center justify-center mb-6 group-hover:bg-${service.color}/20 transition-colors`}>
                   <Icon size={28} className={`text-${service.color}`} />
                 </div>
@@ -106,9 +123,15 @@ export default function ServicesSection() {
                   {service.title}
                 </h3>
 
-                <p className="text-white/60 leading-relaxed">
+                <p className="text-white/60 leading-relaxed mb-6">
                   {service.description}
                 </p>
+                <Link
+                  href={`/servicios/${service.slug}`}
+                  className={`text-sm font-semibold text-${service.color} hover:underline underline-offset-4 transition-all`}
+                >
+                  Conocer más →
+                </Link>
               </motion.div>
             );
           })}

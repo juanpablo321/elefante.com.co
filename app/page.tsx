@@ -7,6 +7,7 @@ import CaseStudiesSection from "@/components/sections/CaseStudiesSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import DemoRequestSection from "@/components/sections/DemoRequestSection";
+import HookProductSection from "@/components/sections/HookProductSection";
 import AboutSection from "@/components/sections/AboutSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
+        <HookProductSection />
         <CaseStudiesSection />
         <TestimonialsSection />
         <FAQSection />

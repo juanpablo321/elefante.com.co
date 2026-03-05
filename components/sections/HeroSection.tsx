@@ -6,8 +6,8 @@ import { IMAGES } from "@/lib/images";
 
 const stats = [
   { value: "+150", label: "Proyectos" },
-  { value: "+50", label: "Clientes" },
-  { value: "98%", label: "Satisfaccion" },
+  { value: "+50", label: "Profesionales" },
+  { value: "98%", label: "Satisfacción" },
 ];
 
 const floatingCards = [
@@ -51,20 +51,24 @@ export default function HeroSection() {
 
             <div className="space-y-2">
               <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wide leading-none">
-                <span className="text-white">ELEFANTE</span>
+                <span className="text-white">MÁS</span>
               </h1>
               <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide leading-none gradient-text">
-                AGENCIA
+                CLIENTES.
+              </h2>
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide leading-none text-white/80">
+                MENOS FRICCIÓN.
               </h2>
             </div>
 
             <p className="text-lg md:text-xl text-brand-yellow font-semibold tracking-wider uppercase">
-              Growth Marketing Agency
+              La Agencia para Profesionales Independientes de Alto Valor
             </p>
 
             <p className="text-white/70 text-base md:text-lg max-w-xl leading-relaxed">
-              Transformamos marcas con estrategias de crecimiento basadas en datos.
-              Creatividad, tecnologia y resultados medibles para impulsar tu negocio al siguiente nivel.
+              Ayudamos a expertos independientes a conseguir más clientes de calidad,
+              automatizar su operación y construir una marca personal que inspire confianza
+              — sin perder tiempo en lo que no es su especialidad.
             </p>
 
             {/* CTAs */}

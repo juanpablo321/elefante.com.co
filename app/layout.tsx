@@ -3,6 +3,7 @@ import { Bebas_Neue, Space_Grotesk } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleTagManager } from "@next/third-parties/google";
 import JsonLdOrganization from "@/components/seo/JsonLdOrganization";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-display" });
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-background text-foreground font-sans">
         <JsonLdOrganization />
         {children}
+        <WhatsAppButton />
         <SpeedInsights />
         <GoogleTagManager gtmId="GTM-WT8HF775" />
       </body>

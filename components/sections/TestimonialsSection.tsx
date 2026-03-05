@@ -4,50 +4,50 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "María González",
-    company: "TechStart Colombia",
-    role: "CEO & Fundadora",
-    content: "Trabajar con Elefante fue transformacional. En 3 meses triplicamos nuestros leads y logramos cerrar deals que parecían imposibles. Su equipo entiende realmente B2B.",
+    name: "Valentina Ospina",
+    company: "Consultora Financiera Independiente",
+    role: "Bogotá, Colombia",
+    content: "Antes no tenía presencia en internet y dependía 100% de referidos. Hoy mis clientes me encuentran en Google y agenden directamente desde mi sitio. En el primer mes recuperé la inversión.",
     rating: 5,
     color: "brand-red"
   },
   {
-    name: "Carlos Rodríguez",
-    company: "E-commerce Bogotá",
-    role: "Director de Marketing",
-    content: "El ROI que generaron en publicidad digital fue increíble. De un presupuesto que pensaba era perdida, sacamos 3.2x de retorno. Los reportes semanales son claros y transparentes.",
+    name: "Sebastián Mora",
+    company: "Arquitecto Independiente",
+    role: "Medellín, Colombia",
+    content: "Elefante entendió exactamente lo que necesitaba: mostrar mi trabajo de forma profesional y atraer proyectos de mayor valor. Las campañas en Meta me generan consultas de calidad cada semana.",
     rating: 5,
     color: "brand-yellow"
   },
   {
-    name: "Alejandra Martínez",
-    company: "Consultoría Legal Plus",
-    role: "Socia",
-    content: "Buscábamos un equipo que entendiera servicios profesionales. Elefante lo logró. Escalamos nuestra base de clientes en 280% sin perder calidad. Altamente recomendados.",
+    name: "Camila Torres",
+    company: "Nutricionista Clínica",
+    role: "Cali, Colombia",
+    content: "El agente de IA que implementaron califica mis leads automáticamente. Ahora solo hablo con personas que ya están listas para contratar. Dupliqué mis consultas sin trabajar más horas.",
     rating: 5,
     color: "brand-cyan"
   },
   {
-    name: "Juan Pérez",
-    company: "Agencia de Viajes Virtual",
-    role: "Propietario",
-    content: "Su estrategia en redes sociales fue revolucionaria para nosotros. Pasamos de tener 2K followers a 45K en 6 meses. Pero más importante: el engagement es real.",
+    name: "Andrés Cárdenas",
+    company: "Consultor de Negocios",
+    role: "Bogotá, Colombia",
+    content: "Los reportes de analytics me muestran exactamente dónde están mis clientes y qué contenido les interesa. Tomo decisiones con datos reales, no con intuición. Un cambio total en mi forma de operar.",
     rating: 5,
     color: "brand-red"
   },
   {
-    name: "Sofía Mendoza",
-    company: "Startup EdTech",
-    role: "Directora General",
-    content: "No solo ejecutan bien, sino que entienden el negocio. Dieron insights que nunca había considerado. El crecimiento ha sido exponencial desde que los contratamos.",
+    name: "Laura Gutiérrez",
+    company: "Psicóloga Organizacional",
+    role: "Barranquilla, Colombia",
+    content: "Mi marca personal en LinkedIn creció de 500 a 8.000 seguidores en 4 meses. Pero lo más valioso es que ahora me llegan oportunidades de conferencias y talleres que antes no imaginaba.",
     rating: 5,
     color: "brand-yellow"
   },
   {
-    name: "Ricardo López",
-    company: "Distribuidora Premium",
-    role: "Gerente Comercial",
-    content: "Después de probar otras agencias, Elefante fue diferente. Resultados comprobables, no promesas vagas. Siguen siendo nuestro socio de crecimiento principal.",
+    name: "Felipe Ramírez",
+    company: "Contador Público Independiente",
+    role: "Pereira, Colombia",
+    content: "Quería posicionarme como experto en tributación para PyMEs. Elefante diseñó una estrategia de contenido y SEO que me puso en la primera página de Google en menos de 3 meses. Increíble.",
     rating: 5,
     color: "brand-cyan"
   }

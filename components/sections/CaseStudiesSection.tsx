@@ -5,13 +5,13 @@ import { TrendingUp, Users, DollarSign } from "lucide-react";
 
 const caseStudies = [
   {
-    title: "E-commerce de Moda",
-    category: "Retail Digital",
-    description: "Empresa colombiana de ropa que necesitaba escalar sus ventas online con estrategias de funnel y pauta paga.",
+    title: "Consultora Financiera",
+    category: "Profesional Independiente",
+    description: "Consultora financiera en Bogotá que dependía exclusivamente de referidos. Implementamos presencia digital, SEO local y campañas de captación en Google.",
     results: [
-      { metric: "+87%", label: "Aumento en Conversiones" },
-      { metric: "+1.8K", label: "Nuevos Clientes" },
-      { metric: "2.1x", label: "ROAS Promedio" }
+      { metric: "+280%", label: "Nuevos Clientes" },
+      { metric: "3.2x", label: "ROI en Pauta" },
+      { metric: "-60%", label: "Tiempo en Admin" }
     ],
     image: "/images/case-study-1.jpg",
     badgeBg: "bg-red-500/20",
@@ -19,13 +19,13 @@ const caseStudies = [
     badgeText: "text-red-400"
   },
   {
-    title: "SaaS B2B",
-    category: "Software",
-    description: "Plataforma de software que buscaba incrementar su base de clientes mediante SEO y contenido especializado.",
+    title: "Arquitecto Independiente",
+    category: "Profesional Creativo",
+    description: "Arquitecto en Medellín que quería atraer proyectos de mayor valor. Construimos su marca personal, portafolio digital y estrategia de contenido en LinkedIn e Instagram.",
     results: [
       { metric: "+95%", label: "Tráfico Orgánico" },
-      { metric: "+32%", label: "Tasa de Conversión" },
-      { metric: "+$18M COP", label: "MRR Generado" }
+      { metric: "8.000", label: "Seguidores en 4 meses" },
+      { metric: "+$45M COP", label: "Proyectos Cerrados" }
     ],
     image: "/images/case-study-2.jpg",
     badgeBg: "bg-cyan-500/20",
@@ -33,13 +33,13 @@ const caseStudies = [
     badgeText: "text-cyan-400"
   },
   {
-    title: "Agencia de Servicios",
-    category: "Consultoría",
-    description: "Consultora que necesitaba generar leads de calidad mediante campañas de LinkedIn y Google Ads.",
+    title: "Clínica de Nutrición",
+    category: "Salud y Bienestar",
+    description: "Nutricionista clínica en Cali que quería escalar su consulta sin aumentar sus horas de trabajo. Implementamos un agente de IA para calificación de leads y automatización de agenda.",
     results: [
-      { metric: "+110%", label: "Leads Generados" },
-      { metric: "+68%", label: "Leads Calificados" },
-      { metric: "-34%", label: "Costo por Lead" }
+      { metric: "+110%", label: "Consultas Agendadas" },
+      { metric: "100%", label: "Leads Calificados por IA" },
+      { metric: "-34%", label: "Costo por Paciente" }
     ],
     image: "/images/case-study-3.jpg",
     badgeBg: "bg-yellow-500/20",
