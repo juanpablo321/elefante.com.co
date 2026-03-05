@@ -25,7 +25,7 @@ export default function PageHero({
           alt={title}
           fill
           className="object-cover absolute inset-0 -z-10"
-          priority
+          loading="eager"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
         />
       )}
