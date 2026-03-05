@@ -218,8 +218,8 @@ export default function SeoSemPage() {
               Implementamos las 7 disciplinas del posicionamiento moderno: SEO, SEM, GEO, AEO, E-E-A-T, SXO y VSO.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="/contacto" className="inline-block bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-red/20">
-                Solicitar Auditoría Gratis
+              <a href="/#demo" className="inline-block bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-red/20">
+                Agendar Demo Gratuita
               </a>
               <a href="#disciplinas" className="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full px-8 py-3 transition-colors border border-white/20">
                 Ver las 7 Disciplinas
@@ -571,8 +571,8 @@ export default function SeoSemPage() {
           <p className="text-white/70 text-lg mb-8">
             Solicita una auditoría gratuita de visibilidad total: analizamos tu presencia en Google, en ChatGPT, en Gemini y en los asistentes de voz.
           </p>
-          <a href="/contacto" className="inline-block bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-red/20">
-            Solicitar Auditoría Gratis
+          <a href="/#demo" className="inline-block bg-brand-red hover:bg-brand-red/80 text-white font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-red/20">
+            Agendar Demo Gratuita
           </a>
         </div>
       </section>

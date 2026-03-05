@@ -52,8 +52,8 @@ export default function PerformanceAdsPage() {
             <p className="text-xl text-white/70 mb-8 leading-relaxed">
               Campañas de publicidad digital optimizadas para conversiones. Google Ads, Meta Ads, TikTok Ads y más. Solo pagas por resultados.
             </p>
-            <a href="/contacto" className="inline-block bg-brand-yellow hover:bg-brand-yellow/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-yellow/20">
-              Solicitar Consultoría Gratis
+            <a href="/#demo" className="inline-block bg-brand-yellow hover:bg-brand-yellow/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-yellow/20">
+              Agendar Demo Gratuita
             </a>
           </div>
         </div>
@@ -271,8 +271,8 @@ export default function PerformanceAdsPage() {
           <p className="text-white/70 text-lg mb-8">
             Descubre cómo nuestras campañas de performance ads pueden mejorar tu ROI. Solicita una auditoría gratuita.
           </p>
-          <a href="/contacto" className="inline-block bg-brand-yellow hover:bg-brand-yellow/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-yellow/20">
-            Solicitar Auditoría Gratuita
+          <a href="/#demo" className="inline-block bg-brand-yellow hover:bg-brand-yellow/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-yellow/20">
+            Agendar Demo Gratuita
           </a>
         </div>
       </section>

@@ -52,8 +52,8 @@ export default function SocialMediaPage() {
             <p className="text-xl text-white/70 mb-8 leading-relaxed">
               Estrategias de redes sociales que construyen comunidad, generan engagement y aceleran ventas. Instagram, TikTok, LinkedIn, Facebook y más.
             </p>
-            <a href="/contacto" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
-              Solicitar Consultoría Gratis
+            <a href="/#demo" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
+              Agendar Demo Gratuita
             </a>
           </div>
         </div>
@@ -259,8 +259,8 @@ export default function SocialMediaPage() {
           <p className="text-white/70 text-lg mb-8">
             Descubre cómo podemos ayudarte a construir una comunidad comprometida y generar resultados. Solicita una auditoría gratuita.
           </p>
-          <a href="/contacto" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
-            Solicitar Auditoría Gratuita
+          <a href="/#demo" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
+            Agendar Demo Gratuita
           </a>
         </div>
       </section>

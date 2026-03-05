@@ -52,8 +52,8 @@ export default function AnalyticsDataPage() {
             <p className="text-xl text-white/70 mb-8 leading-relaxed">
               Análisis profundo de datos, dashboards personalizados y reportes accionables. Toma decisiones basadas en información real, no en intuición.
             </p>
-            <a href="/contacto" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
-              Solicitar Auditoría Gratis
+            <a href="/#demo" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
+              Agendar Demo Gratuita
             </a>
           </div>
         </div>
@@ -348,8 +348,8 @@ export default function AnalyticsDataPage() {
           <p className="text-white/70 text-lg mb-8">
             Descubre cómo nuestro análisis de datos puede transformar tu negocio. Solicita una auditoría gratuita de tu analytics.
           </p>
-          <a href="/contacto" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
-            Solicitar Auditoría Gratis
+          <a href="/#demo" className="inline-block bg-brand-cyan hover:bg-brand-cyan/80 text-black font-semibold rounded-full px-8 py-3 transition-colors shadow-lg shadow-brand-cyan/20">
+            Agendar Demo Gratuita
           </a>
         </div>
       </section>
