@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CheckCircle, ArrowRight, Globe, MapPin, Share2, Zap, Clock, Shield, Star } from "lucide-react";
+import { CheckCircle, ArrowRight, Globe, MapPin, Share2, Zap, Clock, Shield, Star, Mail, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -173,6 +173,55 @@ export default function PresenciaDigitalEsencialPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Email Add-on */}
+        <section className="py-16">
+          <div className="container max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-brand-yellow/10 via-card to-brand-red/5 border border-brand-yellow/20 rounded-3xl p-8 md:p-10">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-brand-yellow/15 flex items-center justify-center">
+                    <Mail size={32} className="text-brand-yellow" />
+                  </div>
+                </div>
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h2 className="font-display text-2xl md:text-3xl text-white tracking-wide">CORREO CON TU PROPIO DOMINIO</h2>
+                    <span className="bg-brand-yellow/20 border border-brand-yellow/30 text-brand-yellow text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Adicional</span>
+                  </div>
+                  <p className="text-white/60 leading-relaxed">
+                    Dale más credibilidad a tu marca con un correo profesional como <span className="text-white font-medium">tu@tunegocio.com</span>. Nada genera más confianza que un email con tu propio dominio.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-white font-bold text-lg">Zoho Mail</span>
+                        <span className="bg-green-500/20 text-green-400 text-xs font-semibold px-2 py-0.5 rounded-full">Gratis</span>
+                      </div>
+                      <p className="text-white/50 text-sm">Plan gratuito disponible para hasta 5 usuarios. Ideal para comenzar sin costo adicional.</p>
+                      <a href="https://www.zoho.com/mail/" target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-brand-yellow/80 hover:text-brand-yellow text-sm transition-colors">
+                        Ver plan gratuito <ExternalLink size={12} />
+                      </a>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-white font-bold text-lg">Google Workspace</span>
+                        <span className="bg-blue-500/20 text-blue-400 text-xs font-semibold px-2 py-0.5 rounded-full">Desde USD $8.5/mes</span>
+                      </div>
+                      <p className="text-white/50 text-sm">Gmail, Drive, Meet y Calendar con tu dominio. La opción más completa para profesionales.</p>
+                      <a href="https://workspace.google.com/" target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-brand-yellow/80 hover:text-brand-yellow text-sm transition-colors">
+                        Ver planes <ExternalLink size={12} />
+                      </a>
+                    </div>
+                  </div>
+                  <p className="text-white/40 text-sm pt-1">Te ayudamos a configurar cualquiera de las dos opciones como parte del proceso de entrega.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
