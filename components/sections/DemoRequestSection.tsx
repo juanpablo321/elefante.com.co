@@ -1,63 +1,131 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, CheckCircle } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
+import { CheckCircle, Clock, Users, TrendingUp } from "lucide-react";
+import { useEffect } from "react";
 
 const benefits = [
   "Análisis personalizado de tu estrategia actual",
   "Propuesta de crecimiento con proyecciones reales",
-  "Sesión de 30 minutos con nuestro especialista"
+  "Sesión de 30 minutos con nuestro especialista",
 ];
 
-export default function DemoRequestSection() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+const stats = [
+  { icon: Clock, value: "30 min", label: "Sesión gratuita" },
+  { icon: Users, value: "100+", label: "Empresas asesoradas" },
+  { icon: TrendingUp, value: "+340%", label: "ROI promedio" },
+];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      // Here you would typically send the email to your backend
-      console.log("[v0] Demo request submitted for:", email);
-      setSubmitted(true);
-      setTimeout(() => {
-        setEmail("");
-        setSubmitted(false);
-      }, 3000);
-    }
-  };
+declare global {
+  interface Window {
+    Cal?: (...args: unknown[]) => void;
+  }
+}
+
+export default function DemoRequestSection() {
+  useEffect(() => {
+    // Load Cal.com embed script only once
+    if (document.getElementById("cal-embed-script")) return;
+
+    const script = document.createElement("script");
+    script.id = "cal-embed-script";
+    script.type = "text/javascript";
+    script.innerHTML = `
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+
+      Cal("init", "30min", { origin: "https://app.cal.com" });
+
+      Cal.ns["30min"]("inline", {
+        elementOrSelector: "#my-cal-inline-30min",
+        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+        calLink: "elefante/30min",
+      });
+
+      Cal.ns["30min"]("ui", {
+        hideEventTypeDetails: false,
+        layout: "month_view",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#FF3B30" },
+          dark: { "cal-brand": "#FF3B30" },
+        },
+      });
+    `;
+    document.head.appendChild(script);
+  }, []);
 
   return (
     <section id="demo" className="py-24 relative overflow-hidden">
-      {/* Background gradient */}
+      {/* Background gradients */}
       <div className="absolute inset-0 bg-gradient-to-r from-brand-cyan/5 via-transparent to-brand-red/5" />
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl" />
 
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+          {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-8"
+            className="space-y-8 lg:sticky lg:top-8"
           >
+            {/* Label */}
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-1 bg-brand-red rounded-full" />
-                <span className="text-brand-red text-sm font-semibold tracking-widest uppercase">Próximo Paso</span>
+                <span className="text-brand-red text-sm font-semibold tracking-widest uppercase">
+                  Próximo Paso
+                </span>
               </div>
               <h2 className="font-display text-5xl md:text-6xl tracking-wide text-white mb-4">
-                Solicita tu Demo Personalizado
+                Agenda tu Demo Gratuita
               </h2>
               <p className="text-white/70 text-lg leading-relaxed">
-                Descubre cómo podemos acelerar el crecimiento de tu negocio con una estrategia personalizada diseñada específicamente para ti.
+                Elige el día y la hora que mejor te convenga. En 30 minutos te mostramos cómo podemos acelerar el crecimiento de tu negocio con una estrategia diseñada específicamente para ti.
               </p>
             </div>
 
-            {/* Benefits List */}
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4">
+              {stats.map(({ icon: Icon, value, label }) => (
+                <div
+                  key={label}
+                  className="bg-white/5 border border-white/10 rounded-xl p-4 text-center"
+                >
+                  <Icon size={20} className="text-brand-red mx-auto mb-2" />
+                  <div className="text-xl font-bold text-white">{value}</div>
+                  <div className="text-white/50 text-xs mt-1">{label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Benefits */}
             <div className="space-y-4">
               {benefits.map((benefit) => (
                 <motion.div
@@ -69,80 +137,42 @@ export default function DemoRequestSection() {
                   className="flex items-center gap-3"
                 >
                   <div className="w-6 h-6 rounded-full bg-brand-red/20 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle size={16} className="text-brand-red" />
+                    <CheckCircle size={14} className="text-brand-red" />
                   </div>
                   <span className="text-white/80 text-base">{benefit}</span>
                 </motion.div>
               ))}
             </div>
 
-            {/* Form */}
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              onSubmit={handleSubmit}
-              className="space-y-3 pt-4"
-            >
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="tu@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-brand-red/50 transition-colors"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-3 rounded-full bg-brand-red hover:bg-brand-red/80 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2 group whitespace-nowrap"
-                >
-                  {submitted ? "¡Enviado!" : "Agendar Demo"}
-                  {!submitted && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
-                </button>
-              </div>
-              <p className="text-xs text-white/40 px-2">
-                Nos pondremos en contacto en máximo 24 horas
-              </p>
-            </motion.form>
+            {/* Trust note */}
+            <p className="text-white/30 text-sm border-t border-white/5 pt-6">
+              Sin compromisos. Recibirás una confirmación inmediata por email con el enlace de la reunión.
+            </p>
           </motion.div>
 
-          {/* Right Image */}
+          {/* Right: Cal.com Embed */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative hidden lg:block"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/cta-demo.jpg"
-                alt="Demo personalizado"
-                width={600}
-                height={600}
-                className="w-full object-cover"
-                unoptimized
+            <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl shadow-brand-red/5">
+              {/* Cal embed header */}
+              <div className="px-6 py-4 border-b border-white/10 flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-brand-red" />
+                <div className="w-3 h-3 rounded-full bg-brand-yellow" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+                <span className="text-white/40 text-sm ml-2">Selecciona fecha y hora</span>
+              </div>
+              {/* Cal inline embed */}
+              <div
+                id="my-cal-inline-30min"
+                style={{ width: "100%", height: "600px", overflow: "scroll" }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent" />
-
-              {/* Floating card */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute bottom-8 left-8 right-8 bg-card/95 backdrop-blur-md border border-brand-red/30 rounded-xl p-4"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <Calendar size={20} className="text-brand-red" />
-                  <span className="font-semibold text-white">Reunión con Especialista</span>
-                </div>
-                <p className="text-white/70 text-sm">
-                  Dedica 30 minutos a conocer el potencial de crecimiento de tu empresa
-                </p>
-              </motion.div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
