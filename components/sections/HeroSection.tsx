@@ -24,7 +24,7 @@ export default function HeroSection() {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <Image src={IMAGES.hero} alt="Hero background" fill className="object-cover opacity-20" unoptimized priority />
+        <Image src={IMAGES.hero} alt="Hero background" fill className="object-cover opacity-20" unoptimized priority fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark/95 to-brand-dark/80" />
       </div>
 
@@ -104,7 +104,7 @@ export default function HeroSection() {
           >
             <div className="relative">
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
-                <Image src={IMAGES.hero} alt="Elefante Growth Marketing" fill className="object-cover" unoptimized />
+                <Image src={IMAGES.hero} alt="Elefante Growth Marketing" fill className="object-cover" unoptimized priority fetchPriority="high" />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent" />
               </div>
 
